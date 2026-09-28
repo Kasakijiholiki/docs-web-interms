@@ -1,0 +1,342 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --apple-bg: #ffffff;
+    --apple-canvas: #fbfbfd;
+    --apple-card: #ffffff;
+    --apple-text: #1d1d1f;
+    --apple-secondary: #86868b;
+    --apple-border: #e5e5ea;
+    --apple-border-light: #f2f2f7;
+    --apple-blue: #0071e3;
+    --apple-blue-hover: #0077ed;
+    --apple-hover: rgba(0, 0, 0, 0.04);
+    --apple-active: rgba(0, 0, 0, 0.08);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--apple-canvas);
+    color: var(--apple-text);
+  }
+
+  body {
+    background-color: var(--apple-canvas);
+    color: var(--apple-text);
+    margin: 0;
+    padding: 0;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* Minimalist Mac Scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #d1d1d6;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #aeaeb2;
+}
+
+/* Apple-style Documentation Typography */
+.doc-content h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #1d1d1f;
+  letter-spacing: -0.025em;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.doc-content h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1d1d1f;
+  letter-spacing: -0.02em;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #f2f2f7;
+  scroll-margin-top: 5rem;
+}
+
+.doc-content h3 {
+  font-size: 1.18rem;
+  font-weight: 600;
+  color: #1d1d1f;
+  letter-spacing: -0.015em;
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+  scroll-margin-top: 5rem;
+}
+
+.doc-content p {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #3a3a3c;
+  margin-top: 0.85rem;
+  margin-bottom: 0.85rem;
+  letter-spacing: -0.011em;
+}
+
+.doc-content ul, .doc-content ol {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  padding-left: 1.4rem;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #3a3a3c;
+}
+
+.doc-content ul {
+  list-style-type: disc;
+}
+
+.doc-content ol {
+  list-style-type: decimal;
+}
+
+.doc-content li {
+  margin-bottom: 0.35rem;
+}
+
+.doc-content code {
+  font-family: ui-monospace, "SF Mono", Menlo, Monaco, Consolas, monospace;
+  font-size: 0.875rem;
+  padding: 0.2rem 0.4rem;
+  background-color: #f5f5f7;
+  color: #1d1d1f;
+  border-radius: 6px;
+  border: 1px solid #e5e5ea;
+  font-weight: 500;
+}
+
+.doc-content kbd {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.15rem 0.45rem;
+  background-color: #ffffff;
+  color: #48484a;
+  border-radius: 6px;
+  border: 1px solid #d2d2d7;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06);
+}
+
+.doc-content blockquote {
+  border-left: 3px solid #0071e3;
+  padding-left: 1rem;
+  margin: 1.25rem 0;
+  font-style: normal;
+  color: #636366;
+}
+
+/* Apple-style Flat Callouts */
+.callout {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  margin: 1.5rem 0;
+  border: 1px solid #e5e5ea;
+  background-color: #fbfbfd;
+}
+
+.callout .callout-icon {
+  font-size: 1.15rem;
+  line-height: 1.2;
+  flex-shrink: 0;
+}
+
+.callout .callout-body strong {
+  display: block;
+  font-size: 0.925rem;
+  font-weight: 600;
+  color: #1d1d1f;
+  margin-bottom: 0.2rem;
+}
+
+.callout .callout-body p {
+  margin: 0;
+  font-size: 0.885rem;
+  line-height: 1.5;
+  color: #48484a;
+}
+
+.callout-tip {
+  background-color: #f4faf6;
+  border-color: #d1ead9;
+}
+.callout-tip .callout-body strong {
+  color: #1e6b37;
+}
+
+.callout-info {
+  background-color: #f2f7fd;
+  border-color: #d2e4f9;
+}
+.callout-info .callout-body strong {
+  color: #0066cc;
+}
+
+.callout-warning {
+  background-color: #fff9f0;
+  border-color: #fce8cc;
+}
+.callout-warning .callout-body strong {
+  color: #a05e03;
+}
+
+.callout-danger {
+  background-color: #fdf4f4;
+  border-color: #fad1d1;
+}
+.callout-danger .callout-body strong {
+  color: #c92a2a;
+}
+
+/* Apple-style Flat Image Container */
+.doc-image-container {
+  margin: 1.75rem 0;
+  background-color: #ffffff;
+  border: 1px solid #e5e5ea;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.doc-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  cursor: zoom-in;
+  transition: opacity 0.15s ease;
+}
+
+.doc-image:hover {
+  opacity: 0.97;
+}
+
+.image-caption {
+  font-size: 0.8125rem;
+  color: #86868b;
+  text-align: center;
+  padding: 0.65rem 1rem;
+  background-color: #fbfbfd;
+  border-top: 1px solid #f2f2f7;
+  margin: 0 !important;
+}
+
+/* Minimal Flat Step Cards */
+.steps-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+}
+
+.step-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 0.95rem 1.15rem;
+  background-color: #ffffff;
+  border: 1px solid #e5e5ea;
+  border-radius: 12px;
+}
+
+.step-number {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background-color: #1d1d1f;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.step-content h4 {
+  margin: 0 0 0.2rem 0;
+  font-size: 0.925rem;
+  font-weight: 600;
+  color: #1d1d1f;
+}
+
+.step-content p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #636366;
+  line-height: 1.5;
+}
+
+/* macOS Terminal / Xcode-inspired Code Block */
+.code-block {
+  margin: 1.5rem 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #1c1c1e;
+  border: 1px solid #2c2c2e;
+}
+
+.code-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.55rem 1rem;
+  background-color: #252528;
+  color: #8e8e93;
+  font-size: 0.75rem;
+  font-family: ui-monospace, "SF Mono", monospace;
+  border-bottom: 1px solid #2c2c2e;
+}
+
+.code-header .copy-button {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #e5e5ea;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.code-header .copy-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+.code-block pre {
+  margin: 0;
+  padding: 1rem 1.15rem;
+  overflow-x: auto;
+  color: #f2f2f7;
+  font-size: 0.84rem;
+  line-height: 1.6;
+}
+
+.code-block code {
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: inherit;
+  font-size: inherit;
+}
